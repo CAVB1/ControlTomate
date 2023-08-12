@@ -24,16 +24,16 @@ import java.util.Map;
 public class HTTPCommunication {
     public static final String SERVER_NAME="https://controltomate.000webhostapp.com/data/";
 
-    public static void PostRequest(String keys[], String values[], String url, Context context, String message){
+    public static void PostRequest(String keys[], String values[], String url, Context context, String message,String errorMessage){
         StringRequest request=  new StringRequest(Request.Method.POST, SERVER_NAME + url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
+            Toast.makeText(context,message,Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                Toast.makeText(context,errorMessage,Toast.LENGTH_SHORT).show();
             }
         }){
             @Nullable
