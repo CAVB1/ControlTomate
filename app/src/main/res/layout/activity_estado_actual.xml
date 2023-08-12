@@ -1,9 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EstadoActual">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="40mm"
+            android:layout_height="40mm"
+
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nivel de pH"
+            android:layout_marginBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/editTextPH"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese el nivel de pH"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nivel de Humedad"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/editTextHumedad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese el nivel de humedad"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nivel de Agua"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/editTextAgua"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese el nivel de agua"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estado"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/editTextStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese el estado"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Acciones requeridas"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/editTextAcciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese las acciones requeridas"/>
+
+    </LinearLayout>
+
+</ScrollView>

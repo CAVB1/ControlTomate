@@ -38,6 +38,7 @@ Button estadoActual, historial, acciones;
             @Override
             public void onClick(View view) {
                 Intent actions=new Intent(MainActivity.this, Acciones.class);
+                startActivity(actions);
             }
         });
     }
