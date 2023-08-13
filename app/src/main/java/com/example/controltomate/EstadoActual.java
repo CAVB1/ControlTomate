@@ -43,6 +43,10 @@ JSONObject object=(response.getJSONObject(0));
                     editTextAgua.setText(object.getString("NIVEL_AGUA"));
                     editTextStatus.setText(object.getString("STATUS"));
 
+                    if(object.getInt("STATUS")==1){
+                        editTextAcciones.setText("Activar la bomba de agua");
+                    }
+
                     String longblobBase64 = object.getString("FOTO");
 
                     System.out.println(longblobBase64);
