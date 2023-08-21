@@ -18,7 +18,7 @@ public class Acciones extends AppCompatActivity {
         btnActivarBomba.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Coloca aquí la lógica para activar la bomba
+
                 HTTPCommunication.PostRequest(new String[]{"codigo"}, new String[]{"1"},"registrarAccion.php",getApplicationContext(),"La acción se ha enviado","Ya has enviado esta acción");
             }
         });
