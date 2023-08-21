@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF" /> <!-- Color de fondo de los bloques -->
+    <stroke android:color="#000000" android:width="2dp" /> <!-- Color y ancho del borde -->
+    <padding android:left="2dp" android:top="2dp" android:right="2dp" android:bottom="2dp" /> <!-- Espacio entre el borde y el contenido -->
+</shape>

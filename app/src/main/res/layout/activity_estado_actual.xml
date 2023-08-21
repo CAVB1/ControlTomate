@@ -9,14 +9,13 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="40mm"
-            android:layout_height="40mm"
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:text="Ver Planta"
+           android:id="@+id/btnVer"/>
 
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            android:layout_marginBottom="16dp"/>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -46,7 +45,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nivel de Agua"
+            android:text="Nivel de Agua en Tanque 1"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="4dp"/>
 
@@ -55,32 +54,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ingrese el nivel de agua"/>
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Estado"
+            android:text="Nivel de Agua en Tanque 2"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="4dp"/>
 
         <EditText
-            android:id="@+id/editTextStatus"
+            android:id="@+id/editTextAgua2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ingrese el estado"/>
+            android:hint="Ingrese el nivel de agua"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Acciones requeridas"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="4dp"/>
 
-        <EditText
-            android:id="@+id/editTextAcciones"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ingrese las acciones requeridas"/>
 
     </LinearLayout>
 
