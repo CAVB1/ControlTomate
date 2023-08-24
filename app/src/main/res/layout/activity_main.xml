@@ -1,124 +1,243 @@
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<RelativeLayout
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".MainActivity">
-
-    <!-- Bloque 1 -->
+    android:background="@drawable/border"
+    android:id="@+id/maincon">
 
 
-
-    <RelativeLayout
-        android:id="@+id/block1"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/darker_gray"
-        android:padding="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nivel de agua Tanque 1:"
-            android:textSize="14sp"
-            android:id="@+id/tanque1"/>
-
-    </RelativeLayout>
-
-    <!-- Bloque 2 -->
-    <RelativeLayout
-        android:id="@+id/block2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_below="@id/block1"
-        android:layout_marginLeft="8dp"
-        android:background="@android:color/darker_gray"
-        android:padding="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nivel de agua Tanque 2"
-            android:textSize="14sp"
-            android:id="@+id/tanque2"/>
-
-    </RelativeLayout>
-
-    <!-- Bloque 3 -->
-    <RelativeLayout
-        android:id="@+id/block3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/block2"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/darker_gray"
-        android:padding="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Humedad de la planta"
-            android:textSize="14sp"
-            android:id="@+id/humedad"/>
-
-    </RelativeLayout>
-
-    <!-- Bloque 4 -->
-    <RelativeLayout
-        android:id="@+id/block4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/block3"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/darker_gray"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:padding="16dp"
-       >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="PH de la planta"
-            android:textSize="14sp"
-            android:id="@+id/ph"/>
-
-    </RelativeLayout>
-
-    <RelativeLayout android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/block4">
-
-
-        <Button
-            android:id="@+id/btnEstadoActual"
+        tools:context=".MainActivity">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:padding="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/stateText"
+                android:text="Estado\nLa planta está bien"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:background="@color/cardview_dark_background"/>
+            <ImageView
+                android:layout_width="400sp"
+                android:layout_height="300sp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/japy"
+                android:layout_below="@+id/stateText"
+                android:id="@+id/imaget"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imaget"
+                android:text="Toca al tomate para refrescar la información"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
+                android:textSize="11sp"/>
+        </RelativeLayout>
+        <!-- First row -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Estado Actual"
+            android:orientation="horizontal">
 
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"/>
+            <RelativeLayout
+                android:id="@+id/block1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="8dp"
+                android:background="@color/greensh"
+                android:padding="16dp"
+                >
 
-        <Button
-            android:id="@+id/btnHistorial"
+                <TextView
+                    android:id="@+id/tanque1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nivel de agua Tanque 1:"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tanque1"
+                    android:textAlignment="center"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="30sp"
+                    android:text="80%"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:id="@+id/ttanque1"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/block2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/rojillo"
+                android:padding="16dp"
+
+                >
+
+                <TextView
+                    android:id="@+id/tanque2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nivel de agua Tanque 2"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tanque2"
+                    android:textAlignment="center"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="30sp"
+                    android:text="30%"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:id="@+id/ttanque2"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <!-- Second row -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Historial"
-            android:layout_below="@id/btnEstadoActual"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"/>
+            android:orientation="horizontal">
 
+            <RelativeLayout
+                android:id="@+id/block3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
 
-    </RelativeLayout>
+                android:background="@color/greensh"
+                android:padding="16dp">
 
+                <TextView
+                    android:id="@+id/humedad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Humedad"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/humedad"
+                    android:textAlignment="center"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="30sp"
+                    android:text="80%"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:id="@+id/thumedad"/>
 
-</RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/block4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="8dp"
+                android:background="@color/greensh"
+                android:padding="16dp"
+                >
+
+                <TextView
+                    android:id="@+id/ph"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PH de la planta"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ph"
+                    android:textAlignment="center"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="30sp"
+                    android:text="80%"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:id="@+id/tph"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/block4">
+
+            <Button
+                style="@style/MyButton"
+
+                android:id="@+id/btnEstadoActual"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:text="Ver la planta"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:padding="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:backgroundTint="@android:color/white"
+                android:outlineSpotShadowColor="@android:color/black"
+                android:outlineAmbientShadowColor="@android:color/black"
+                android:stateListAnimator="@null"
+                />
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/btnHistorial"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:text="Historial"
+                android:layout_below="@id/btnEstadoActual"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:padding="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:backgroundTint="@android:color/white"
+                android:outlineSpotShadowColor="@android:color/black"
+                android:outlineAmbientShadowColor="@android:color/black"
+                android:stateListAnimator="@null" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
 </ScrollView>

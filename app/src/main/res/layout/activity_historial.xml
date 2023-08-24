@@ -19,10 +19,12 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tableLayout">
+        android:id="@+id/tableLayout"
+        style="@style/TablaEstilo">
 
         <TableRow>
             <TextView
+
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

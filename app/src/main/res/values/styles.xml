@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/rectangle</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:backgroundTint">#000000</item>
+        <item name="android:backgroundTintMode">src_over</item>
+        <item name="android:outlineSpotShadowColor">@android:color/black</item>
+        <item name="android:outlineAmbientShadowColor">@android:color/black</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="TableCell">
+        <item name="android:padding">10dp</item>
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="Table">
+        <item name="android:background">#CCCCCC</item>
+        <item name="android:stretchColumns">0,1</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TablaEstilo">
+        <item name="android:background">#FFFFFF</item> <!-- Color de fondo de la tabla -->
+        <item name="android:padding">5dp</item> <!-- Espaciado interno de las celdas -->
+        <item name="android:layout_margin">5dp</item> <!-- Espaciado externo de la tabla -->
+        <item name="android:layout_width">match_parent</item> <!-- Ancho de la tabla -->
+        <item name="android:layout_height">wrap_content</item> <!-- Alto de la tabla -->
+        <item name="android:stretchColumns">0,1</item> <!-- Columnas que se ajustarán al ancho de la pantalla -->
+    </style>
+</resources>
