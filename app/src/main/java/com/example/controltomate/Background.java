@@ -38,6 +38,7 @@ public class Background extends Service {
             public void run() {
                 // Coloca la lógica que deseas ejecutar en segundo plano aquí
                 Log.d("MyBackgroundService", "Contador: " + counter);
+                counter=1;
 
 
                 JsonArrayRequest jsonArrayRequest=new JsonArrayRequest(HTTPCommunication.SERVER_NAME + "getLastEstado.php", new Response.Listener<JSONArray>() {
@@ -50,46 +51,35 @@ public class Background extends Service {
                             int nivel_agua=object.getInt("NIVEL_AGUA");
 
                             if(object.getInt("NIVEL_AGUA2")<=0){
-                                Notification notification = createNotification("Tanque 2: El nivel de agua es CRÍTICO","Se recomienda abastecer agua en el tanque");
-                                startForeground(counter, notification);
-                                counter++;
+
+                                showNotification("El tanque 2 está vacio","Necesita ser llenado urgentemente");
 
 
                             }else if (object.getInt("NIVEL_AGUA2")<10){
-                                Notification notification = createNotification("Tanque 2: El nivel de agua es BAJO <10%","Se recomienda abastecer agua en el tanque");
-                                startForeground(counter, notification);
-                                counter++;
-
+                               showNotification("El tanque 2 se está quedando sin agua","El nivel está por debajo del 10%");
 
                             }else if (object.getInt("NIVEL_AGUA2")<50){
-                                Notification notification = createNotification("Tanque 2: Nivel medio de agua (<50% nivel de agua)","Se está quedando sin agua");
-                                startForeground(counter, notification);
-                                counter++;
+                                showNotification("Tanque 2: Nivel medio de agua (<50% nivel de agua)","Se está quedando sin agua");
 
+
+                            }else {
+                                showNotification("Tanque 2","El nivel de agua es correcto. +50%");
                             }
 
 
                             if(object.getInt("NIVEL_AGUA")<=0){
-                                Notification notification = createNotification("El nivel de agua es CRÍTICO","Se recomienda abastecer agua en el tanque");
-                                startForeground(counter, notification);
-                                counter++;
+                                showNotification("El tanque 1 está vacio","Necesita ser llenado urgentemente");
 
 
                             }else if (object.getInt("NIVEL_AGUA")<10){
-                                Notification notification = createNotification("El nivel de agua es BAJO <10%","Se recomienda abastecer agua en el tanque");
-                                startForeground(counter, notification);
-                                counter++;
+                                showNotification("El tanque 1 se está quedando sin agua","Se recomienda llenarlo pronto. -10%");
 
 
                             }else if (object.getInt("NIVEL_AGUA")<50){
-                                Notification notification = createNotification("Nivel medio de agua (<50% nivel de agua)","Se está quedando sin agua");
-                                startForeground(counter, notification);
-                                counter++;
+                                showNotification("Tanque 1: Nivel medio de agua (<50% nivel de agua)","Se está quedando sin agua");
 
                             }else{
-                                Notification notification = createNotification("Nivel de agua correcto","EL agua esta sobre el 50%");
-                                startForeground(counter, notification);
-                                counter++;
+                                showNotification("Tanque 1","El nivel de agua es correcto. +50%");
                             }
 
                             System.out.println(nivel_agua);
@@ -154,6 +144,13 @@ public class Background extends Service {
         builder.addAction(android.R.drawable.ic_menu_close_clear_cancel, "Cerrar", closePendingIntent);
 
         return builder.build();
+    }
+
+    private void showNotification(String title, String content) {
+        Notification notification = createNotification(title, content);
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        notificationManager.notify(counter, notification);
+        counter++; // Incrementar el ID único para la próxima notificación
     }
 
 }
